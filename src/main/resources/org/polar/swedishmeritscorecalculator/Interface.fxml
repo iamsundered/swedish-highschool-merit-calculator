@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.polar.swedishmeritscorecalculator.InterfaceController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.polar.swedishmeritscorecalculator.InterfaceController">
     <children>
         <Text layoutX="285.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MERIT CALCULATOR">
             <font>
@@ -41,7 +41,7 @@
                         <ComboBox fx:id="gradeComboBox" layoutX="65.0" layoutY="138.0" prefHeight="25.0" prefWidth="191.0" promptText="Grade" />
                         <TextField fx:id="courseInputTextField" layoutX="65.0" layoutY="47.0" prefHeight="25.0" prefWidth="191.0" promptText="Course" />
                         <Button fx:id="addCourseBtn" layoutX="65.0" layoutY="181.0" mnemonicParsing="false" onAction="#triggerNewCourse" prefHeight="39.0" prefWidth="191.0" text="ADD COURSE" />
-                        <Button fx:id="removeCourseBtn" layoutX="65.0" layoutY="233.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="191.0" text="REMOVE COURSE" />
+                        <Button fx:id="removeCourseBtn" layoutX="65.0" layoutY="233.0" mnemonicParsing="false" onAction="#triggerRemoveCourse" prefHeight="39.0" prefWidth="191.0" text="REMOVE COURSE" />
                         <ComboBox fx:id="extraMeritComboBox" editable="true" layoutX="65.0" layoutY="288.0" prefHeight="25.0" prefWidth="191.0" promptText="Extra Merit" />
                     </children>
                 </Pane>

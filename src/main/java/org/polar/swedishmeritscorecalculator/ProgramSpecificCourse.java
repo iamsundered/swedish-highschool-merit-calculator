@@ -8,9 +8,6 @@ public class ProgramSpecificCourse extends Course {
 
     @Override
     public double getGradeValue() {
-        System.out.println("name: " + getName());
-        System.out.println("points: " + points);
-        System.out.println("grade: " + grade);
         return switch (grade) {
             case 'A' -> 20 * points;
             case 'B' -> 17.5 * points;

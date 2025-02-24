@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class InterfaceController {
 
@@ -67,7 +68,21 @@ public class InterfaceController {
 
 
     public void triggerNewCourse() {
-        main.newCourse();
+        main.newCourse(getCourse(), getPoints(), getGrade());
+    }
+    public void triggerRemoveCourse() {
+        main.removeCourse(getCourse());
+    }
+
+    @FXML
+    static TextField summaryTextField;
+    public static void displayCoursesText(Course course) {
+        System.out.println("name: " + course.getName());
+        System.out.println("points: " + course.getPoints());
+        System.out.println("grade: " + course.getGrade());
+        summaryTextField.setText(summaryTextField.getText()+course.getName());
+        // TODO SOMETHING GOOFY UP HERE. TRYING OT DISPLAY IT IN THE TEXTFIELD BUT ITS NOT SHOWING UP FOR SOME REASON.
+        //  CHECK OUT Programs displayCourses method.
     }
 
 }

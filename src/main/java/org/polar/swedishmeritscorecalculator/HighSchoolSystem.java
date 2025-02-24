@@ -39,16 +39,19 @@ public class HighSchoolSystem extends Application {
         program = new Program("PROGRAMnumbahONE");
     }
 
-    public void newCourse() {
-        String courseName = controller.getCourse();
-        int coursePoints = controller.getPoints();
-        char courseGrade = controller.getGrade();
+    public void newCourse(String courseName, int coursePoints, char courseGrade) {
 
         program.addCourse(new ProgramSpecificCourse(courseName, coursePoints, courseGrade));
 
-
         program.getTotalMerit();
     }
+
+    public void removeCourse(String courseName) {
+        // note to self. this does in fact remove the course from the courses list in program.
+        program.removeCourse(courseName);
+    }
+
+
 
     private void newProgram() {
         System.out.println("Enter new program");
@@ -76,8 +79,6 @@ public class HighSchoolSystem extends Application {
     private void addCourse() {
 
     }
-
-    private void removeCourse() {}
 
     private void displayMerit() {
     }

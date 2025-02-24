@@ -45,15 +45,23 @@ public class Program {
         System.out.println("Program: " + name);
         for (Course course : courses) {
             System.out.println("  - "+course);
+            InterfaceController.displayCoursesText(course);
         }
         System.out.println("Total points: " + getTotalPoints());
     }
 
 
     public void getTotalMerit() {
+        System.out.println(" ");
+        System.out.println(" ");
+
         for (Course course : courses) {
-            System.out.println(course.getGradeValue()); // ITS 0.0 BECAUSE A GRADE HASNT BEEN GIVEN!
+            System.out.println(course.getGradeValue());
+            System.out.println(" ");
         }
+
+        System.out.println(" ");
+        System.out.println(" ");
     }
 
 
