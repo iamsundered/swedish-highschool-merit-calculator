@@ -29,6 +29,9 @@ public class InterfaceController {
 
     public static final Path jsonFilePath = Path.of("src/main/java/org/polar/swedishmeritscorecalculator/data.json");
 
+    // THIS IS STRUCTURE REMODEL BRANCH WOOOO
+    // AAAAAAAAAAA
+    // AAAAAAAAAAAAAAAA
 
     @FXML TextField courseInputTextField; @FXML ComboBox<Integer> pointsComboBox;
     @FXML ComboBox<Character> gradeComboBox; @FXML ComboBox<Integer> extraMeritComboBox;
