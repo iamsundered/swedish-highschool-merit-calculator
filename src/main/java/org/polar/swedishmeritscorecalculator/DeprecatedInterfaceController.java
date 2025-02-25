@@ -7,9 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import java.nio.file.Path;
-import java.util.ArrayList;
 
-public class InterfaceController {
+public class DeprecatedInterfaceController {
 
     // Scene Controll:
     private Parent root;

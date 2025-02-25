@@ -45,7 +45,7 @@ public class Program {
         System.out.println("Program: " + name);
         for (Course course : courses) {
             System.out.println("  - "+course);
-            InterfaceController.displayCoursesText(course);
+            DeprecatedInterfaceController.displayCoursesText(course);
         }
         System.out.println("Total points: " + getTotalPoints());
     }

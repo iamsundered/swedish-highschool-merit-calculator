@@ -12,11 +12,11 @@ import java.util.Scanner;
 public class HighSchoolSystem extends Application {
     private Scanner sc;
     private Program program;
-    private InterfaceController controller;
+    private CreationInterfaceController controller;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Interface.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Creation_Interface.fxml"));
 
         Parent root = loader.load();
 
