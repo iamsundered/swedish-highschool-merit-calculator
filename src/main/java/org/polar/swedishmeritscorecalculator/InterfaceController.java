@@ -27,6 +27,10 @@ public class InterfaceController {
         defaultValues();
     }
 
+    public void doNothing() {
+        System.out.println("I EXIST IN STRUCTURE MODEL BRANCH!");
+    }
+
     public static final Path jsonFilePath = Path.of("src/main/java/org/polar/swedishmeritscorecalculator/data.json");
 
 
