@@ -7,12 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HighSchoolSystem extends Application {
     private Scanner sc;
     private Program program;
     private CreationInterfaceController controller;
+    ArrayList<Program> programsList = new ArrayList<>();
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,7 +26,7 @@ public class HighSchoolSystem extends Application {
         controller.setMain(this); // Pass main reference to controller
         controller.setRoot(root); // Set the root node in the controller
 
-        Scene scene = new Scene(root, 900, 600);
+        Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         stage.setScene(scene);
         stage.setResizable(false);
@@ -35,9 +37,30 @@ public class HighSchoolSystem extends Application {
 
     }
 
-    public HighSchoolSystem() {
-        program = new Program("PROGRAMnumbahONE");
+
+    public void newProgramme(String programName) {
+        System.out.println("Enter new program");
+        this.program = new Program(programName);
+
+        programsList.add(program);
+
+        program.displayProgramName();
+
     }
+
+    public ArrayList<Program> getProgramsList() {
+        return programsList;
+    }
+
+    public void newStudent(String studentName, Program programme) {
+        Student student = new Student(studentName, programme);
+
+        System.out.println("\nnew student: ");
+        System.out.println("Name: "+student.getStudentName());
+        System.out.println("Programme: "+student.getProgramName() +"\n");
+
+    }
+
 
     public void newCourse(String courseName, int coursePoints, char courseGrade) {
 
@@ -52,29 +75,6 @@ public class HighSchoolSystem extends Application {
     }
 
 
-
-    private void newProgram() {
-        System.out.println("Enter new program");
-        //String programName =
-
-        /*program.addCourse(new ProgramSpecificCourse("Physics 1", 100));
-        program.addCourse(new ProgramSpecificCourse("Physics 2", 200));
-        program.addCourse(new ProgramSpecificCourse("Physics 3", 300));
-
-        program.displayCourses();
-        System.out.println("\n");
-
-        program.removeCourse("Physics 1");
-        program.removeCourse("Physics 2");
-
-        //program.addCourse(new ExtraMeritCourse("Math 4", 1));
-
-        program.displayCourses();
-        program.getTotalPoints();
-
-        program.getTotalMerit();
-*/
-    }
 
     private void addCourse() {
 

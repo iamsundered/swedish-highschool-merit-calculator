@@ -12,6 +12,14 @@ public class Program {
         //setupStandardCourses();
     }
 
+    // Instead of showing its memory address when added to combobox as a value,
+    // now it returns its name. This, because when displaying an object in a combobox in javafx
+    // it automatically calls toString().
+    @Override
+    public String toString() {
+        return name;
+    }
+
     /*public void setupStandardCourses() {
         addCourse(new StandardCourse("english", 100));
         addCourse(new StandardCourse("history", 50));
@@ -22,6 +30,9 @@ public class Program {
         addCourse(new StandardCourse("civics", 100));
         addCourse(new StandardCourse("swedish", 100));
     }*/
+    public void displayProgramName() {
+        System.out.println(name);
+    }
 
     public void addCourse(Course course) {
         courses.add(course);
