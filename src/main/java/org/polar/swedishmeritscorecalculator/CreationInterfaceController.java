@@ -12,17 +12,16 @@ import java.util.ArrayList;
 
 public class CreationInterfaceController {
 
-    // Scene Controll:
-    private Parent root;
+    @FXML
+    private void switchToProgramme() {
+        SceneManager.changeScene("Programme_Interface.fxml");
+        System.out.println("Programme_Interface.fxml");
+    }
+
     private HighSchoolSystem main;
 
-
-
-    public void setMain(HighSchoolSystem main) {
-        this.main = main;
-    }
-    public void setRoot(Parent root) {
-        this.root = root;
+    public void setMainApp(HighSchoolSystem mainApp) {
+        this.main = mainApp;
     }
 
     @FXML

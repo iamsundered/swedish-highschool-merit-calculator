@@ -1,6 +1,6 @@
-<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2025-02-26T09:58:23.020Z" version="22.1.22" etag="RJodfXlELxuUzs7z88F7" type="embed">
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2025-02-27T19:37:05.347Z" etag="0EiHy1S39-KgTVMp8-HZ" version="22.1.22" type="embed">
   <diagram name="Page-1" id="ZLX0v0UZS0Uh1XJOQydC">
-    <mxGraphModel dx="1077" dy="456" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1685" dy="939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -165,7 +165,7 @@
         <mxCell id="8wF5PM18fzEZvsAPbTo8-52" value="student interface" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1337" y="240" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="2" value="Creation Interface" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="2" value="Creation Interface" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1177" y="35" width="90" height="90" as="geometry" />
         </mxCell>
       </root>

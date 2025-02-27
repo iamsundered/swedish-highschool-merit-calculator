@@ -18,9 +18,21 @@ public class HighSchoolSystem extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        SceneManager.setStage(stage);
-        SceneManager.setMainApp(this);
-        SceneManager.changeScene("Creation_Interface.fxml");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Creation_Interface.fxml"));
+
+        Parent root = loader.load();
+
+        controller = loader.getController();
+        controller.setMain(this); // Pass main reference to controller
+        controller.setRoot(root); // Set the root node in the controller
+
+        Scene scene = new Scene(root, 800, 600);
+        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+
+        //sc.close();
     }
 
 
@@ -29,6 +41,7 @@ public class HighSchoolSystem extends Application {
         this.program = new Program(programName);
 
         programsList.add(program);
+
         program.displayProgramName();
 
     }

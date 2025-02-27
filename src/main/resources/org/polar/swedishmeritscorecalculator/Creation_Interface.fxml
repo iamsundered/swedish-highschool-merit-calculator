@@ -38,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Add Courses">
+                  <Button mnemonicParsing="false" onAction="#switchToProgramme" prefHeight="40.0" prefWidth="120.0" text="Add Courses">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
