@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class HighSchoolSystem extends Application {
     private Scanner sc;
     private Program program;
-    private CreationInterfaceController controller;
     ArrayList<Program> programsList = new ArrayList<>();
 
     @Override

@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.polar.swedishmeritscorecalculator.ProgrammeInterfaceController">
    <children>
-      <Label layoutX="158.0" layoutY="186.0" text="WELCOME TO DA PARTAY">
+      <Label layoutX="114.0" layoutY="502.0" text="WELCOME TO DA PARTAY">
          <font>
             <Font size="49.0" />
          </font>
       </Label>
+      <Button layoutX="338.0" layoutY="467.0" mnemonicParsing="false" onAction="#switchToProgramme" prefHeight="47.0" prefWidth="125.0" text="Go Back" />
+      <ComboBox fx:id="programmesOptions" layoutX="224.0" layoutY="168.0" prefHeight="38.0" prefWidth="351.0" promptText="Programme" />
+      <TextField layoutX="224.0" layoutY="224.0" prefHeight="38.0" prefWidth="263.0" promptText="Course name:" />
+      <Button layoutX="313.0" layoutY="273.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" text="Add Course" />
+      <ComboBox fx:id="pointsBox" layoutX="487.0" layoutY="224.0" prefHeight="38.0" prefWidth="88.0" promptText="Points" />
+      <ComboBox layoutX="277.0" layoutY="348.0" prefHeight="38.0" prefWidth="246.0" promptText="Courses" />
+      <Button layoutX="315.0" layoutY="394.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" text="Remove Course" />
    </children>
 </AnchorPane>

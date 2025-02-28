@@ -3,7 +3,6 @@ package org.polar.swedishmeritscorecalculator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -11,6 +10,7 @@ import javafx.scene.control.TextField;
 import java.util.ArrayList;
 
 public class CreationInterfaceController {
+
 
     @FXML
     private void switchToProgramme() {
@@ -22,17 +22,26 @@ public class CreationInterfaceController {
 
     public void setMainApp(HighSchoolSystem mainApp) {
         this.main = mainApp;
+
+        // Loads all programme values in combobox on scene start.
+        feedProgrammesOptions();
     }
+
 
     @FXML
     TextField programNameInput;
     // A list of all current programmes
     ArrayList<Program> newProgrammesList;
 
+    private void loadProgrammesList() {
+        newProgrammesList = main.getProgramsList();
+    }
+
+
     @FXML //added so that .fxml file can assign this method to an element.
     // When "Create Programme" button gets pressed:
     private void triggerNewProgramme() {
-        newProgrammesList = main.getProgramsList();
+        loadProgrammesList(); // for failsafes e.g. checking duplicate names etc.
         String programName = programNameInput.getText();
 
         if (programName.isEmpty()) {
@@ -58,18 +67,15 @@ public class CreationInterfaceController {
         main.newProgramme(programName);
 
         // update the list of programmes since a new one was created above.
-        newProgrammesList = main.getProgramsList();
-
         // Update combobox values
         feedProgrammesOptions();
     }
 
-
-
     @FXML
     ComboBox<Program> programmesOptions;
 
-    public void feedProgrammesOptions() {
+    private void feedProgrammesOptions() {
+        loadProgrammesList();
 
         ObservableList<Program> observableProgrammesOptions = FXCollections.observableArrayList(newProgrammesList);
         programmesOptions.setItems(observableProgrammesOptions);
