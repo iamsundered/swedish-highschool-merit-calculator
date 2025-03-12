@@ -1,80 +1,71 @@
 package org.polar.swedishmeritscorecalculator;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ProgrammeInterfaceController {
+    private HighSchoolSystem main;
+
     @FXML
-    private void switchToProgramme() {
+    private ComboBox<Program> programmesOptions;
+    @FXML
+    private ComboBox<Integer> pointsBox;
+    @FXML
+    private TextField courseName;
+    @FXML
+    private TextField listOfProgrammes; // For displaying course programs
+
+    public void setMainApp(HighSchoolSystem mainApp) {
+        this.main = mainApp;
+        feedProgrammesOptions();
+    }
+
+    @FXML
+    private void switchToCreationMenu() {
         SceneManager.changeScene("Creation_Interface.fxml");
         System.out.println("Creation_Interface.fxml");
     }
 
-    private HighSchoolSystem main;
-
-    public void setMainApp(HighSchoolSystem mainApp) {
-        this.main = mainApp;
-
-        // Load all program values in combobox (same as in CreationInterface).
-        feedProgrammesOptions();
-    }
-
-    ArrayList<Program> newProgrammesList;
-    private void loadProgrammesList() {
-        newProgrammesList = main.getProgramsList();
-    }
-
-    @FXML
-    ComboBox<Program> programmesOptions;
-    @FXML
-    ComboBox<Integer> pointsBox;
-
     private void feedProgrammesOptions() {
-        loadProgrammesList();
-
-        ObservableList<Program> observableProgrammesOptions = FXCollections.observableArrayList(newProgrammesList);
-        programmesOptions.setItems(observableProgrammesOptions);
-
-        // Sets the default selection using obeservablelist.
-        if (!observableProgrammesOptions.isEmpty()) {
-            programmesOptions.setValue(observableProgrammesOptions.get(0));
+        ArrayList<Program> newProgrammesList = main.getProgramsList();
+        programmesOptions.getItems().setAll(newProgrammesList);
+        if (!newProgrammesList.isEmpty()) {
+            programmesOptions.setValue(newProgrammesList.get(0));
         }
 
         ArrayList<Integer> points = new ArrayList<>();
-
         points.add(50);
         points.add(100);
         points.add(150);
         points.add(200);
-
-        ObservableList<Integer> observablePoints = FXCollections.observableArrayList(points);
-
-        if (!observablePoints.isEmpty()) {
-            pointsBox.setValue(observablePoints.get(0));
-        }
-
-
-
-
+        pointsBox.getItems().setAll(points);
     }
 
+    @FXML
     private void triggerNewCourse() {
-
-        char soGood = 'A';
-
-        main.newCourse(programmesOptions.getValue(), pointsBox.setValue(pointsBox.getValue()), soGood);
+        Program selectedProgramme = programmesOptions.getValue();
+        if (selectedProgramme == null || courseName.getText().isEmpty() || pointsBox.getValue() == null) {
+            System.out.println("Invalid input");
+            return;
+        }
+        main.newCourse(selectedProgramme, courseName.getText(), pointsBox.getValue());
+        System.out.println("New Course created: " + courseName.getText());
     }
 
-
+    @FXML
+    private void displayProgramCourses() {
+        Program selectedProgramme = programmesOptions.getValue();
+        if (selectedProgramme != null && listOfProgrammes != null) {
+            String result = "Courses for " + selectedProgramme.toString() + ":\n";
+            for (Course course : selectedProgramme.getCourses()) {
+                result = result + course.getName() + "\n";
+            }
+            listOfProgrammes.setText(result);
+        } else {
+            System.err.println("Error: selectedProgramme or listOfProgrammes is null");
+        }
+    }
 }
